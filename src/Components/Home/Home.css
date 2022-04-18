@@ -1,0 +1,59 @@
+.movie-banner{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.movie-banner h6{
+    font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+letter-spacing: 4px;
+color: white;
+}
+
+.movie-banner h2{
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 6rem;
+line-height: 100px;
+letter-spacing: 16px;
+text-transform: uppercase;
+color: #64EEBC;
+margin: 0;
+}
+.Botones {
+    display: flex;
+}
+.btn{
+    font-family: 'Bebas Neue';
+    width: 250px;
+    padding: 12px 0px;
+    font-size: 18px;
+    box-shadow: none;
+    margin-top: 16px;
+    font-weight: 300;
+    border-radius: 0;
+    border: none;
+    letter-spacing: 4px;
+    color: #fff;
+    background-color: #242424;
+}
+
+.movie-sidebar{
+    width: 20%;
+}
+button.btn.list {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(36, 36, 36, 0.5);
+border: 1px solid rgba(255, 255, 255, 0.5);
+box-sizing: border-box;
+}

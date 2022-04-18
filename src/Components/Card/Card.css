@@ -1,0 +1,34 @@
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.card {
+    box-sizing: border-box;
+    background: url(https://image.tmdb.org/t/p/originalhttps://image.tmdb.org/t/p/w300//iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg) center center / cover no-repeat;
+    object-fit: contain;
+    width: 100%;
+    max-width: 220px;
+    height: 120px;
+    display: flex;
+    border-radius: 3px;
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.card-content {
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 3px;
+    background: linear-gradient(180deg,transparent 22.78%,#000 122.69%);
+    justify-content: flex-end;
+    vertical-align: baseline;
+}

@@ -1,0 +1,36 @@
+nav{
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+nav .logo img {
+    margin-right: 40px;
+    object-fit: contain;
+}
+nav a{
+    display: flex;
+    align-items: center;
+    font-family: 'Bebas Neue';
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+}
+.nav-left {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nav-right {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-right> .menu{
+    padding-left: 40px;
+}
