@@ -1,0 +1,38 @@
+
+.upload{
+    border: 1px dashed #FFFFFF;
+    box-sizing: border-box;
+    padding: 60px 100px;
+    text-align: center;
+}
+.drop{
+    cursor: pointer;
+}
+.upload a{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 4px;
+    overflow: hidden;
+  }
+.bar-progress {
+    width: 100%;
+    background-color: #FFFFFF80;
+}
+span.MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-determinate.bar-progress.css-eglki6-MuiLinearProgress-root {
+    background-color: #FFFFFF80;
+}
+.upload .MuiLinearProgress-barColorPrimary{
+    background-color: #64EEBC;
+}
+.upload .error .MuiLinearProgress-barColorPrimary{
+    background-color: red;
+}
+
+.upload .drop-icon{
+    transform: rotate(-45deg);
+    font-size: 18px;
+    padding-right: 7px;
+}

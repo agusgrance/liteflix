@@ -1,0 +1,97 @@
+.modal {
+    position: fixed; 
+    z-index: 1;
+    left: 25%;
+    top: 25%;
+    width: 50%; 
+    height: 55%; 
+    padding: 12px;
+    overflow: auto; 
+    background-color:#242424; 
+    color: white;
+    animation:animateFromBottom 1s ease ;
+  }
+  .close {
+    cursor: pointer;
+    width: fit-content;
+    float: right;
+}
+  .modal-section {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-add {
+  width: 70%;
+}
+  .modal-title h4{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px; 
+    letter-spacing: 4px;
+    color: #64EEBC;
+  }
+
+ 
+  .add-title {
+    font-size: 16px;
+    width: 250px;
+    display: block;
+    margin: 35px;
+    border-bottom: 1px solid #fff;
+}
+  .modal-section input{
+    font-family: 'Bebas Neue';
+    color: #fff;
+    width: 100%;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+letter-spacing: 4px;
+background-color: transparent;
+box-shadow: none;
+border: none;
+  }
+.btn.add {
+    background: #E5E5E5;
+    color: #242424;
+}
+.btn.add:hover{
+  opacity: 0.9;
+}
+.btn.add.disabled {
+  opacity: 0.5;
+  cursor:initial;
+}
+.modal-section.success{
+  margin-top: 7%;
+}
+.modal-section.success h4{
+  font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 26px;
+text-align: center;
+letter-spacing: 4px;
+color: #FFFFFF;
+}
+.modal-section.success h5{
+  font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+letter-spacing: 4px;
+color: #FFFFFF;
+}
+@keyframes animateFromBottom {
+  from {transform: translateY(600px); opacity: 0}
+  to {transform: translateY(0); opacity: 1}
+}

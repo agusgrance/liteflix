@@ -1,7 +1,9 @@
 .App{
   height: 100%;
     min-height: 100vh;
-  background: url("./Assets/Img/Bkg.jpg") center center / cover no-repeat;
+    object-fit: contain;
+    overflow: hidden;
+    animation: zoominback 2s ease-out;
 }
 .container{
   display: flex;
@@ -9,4 +11,16 @@
   height: 80vh;
   margin: 0 auto;
 
+}
+
+@keyframes zoominback {
+  0% {
+    background-size:200%;
+  
+  }
+  100% {
+      
+    background-size:100%;
+ 
+   }
 }

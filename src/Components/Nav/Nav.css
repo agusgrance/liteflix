@@ -10,6 +10,7 @@ nav .logo img {
     object-fit: contain;
 }
 nav a{
+    cursor: pointer;
     display: flex;
     align-items: center;
     font-family: 'Bebas Neue';

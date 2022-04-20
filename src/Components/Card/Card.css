@@ -5,11 +5,39 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-.card {
+.card-animation{
     box-sizing: border-box;
-    background: url(https://image.tmdb.org/t/p/originalhttps://image.tmdb.org/t/p/w300//iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg) center center / cover no-repeat;
-    object-fit: contain;
     width: 100%;
+    
+}
+.card-animation:first-child{
+    
+    -webkit-animation: fadeInAnimation .6s ease-out both;
+    animation: fadeInAnimation .6s ease-out both;
+    animation-delay: .5s;
+}
+
+.card-animation:nth-child(2) {
+    -webkit-animation: fadeInAnimation .6s ease-out both;
+    animation: fadeInAnimation .6s ease-out both;
+    animation-delay: .8s;
+}
+
+.card-animation:nth-child(3) {
+    -webkit-animation: fadeInAnimation .6s ease-out both;
+    animation: fadeInAnimation .6s ease-out both;
+    animation-delay: 1s;
+}
+.card-animation:nth-child(4) {
+    -webkit-animation: fadeInAnimation .6s ease-out both;
+    animation: fadeInAnimation .6s ease-out both;
+    animation-delay: 1.2s;
+}
+.card {
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    object-fit: contain;
+    cursor: pointer;
     max-width: 220px;
     height: 120px;
     display: flex;
@@ -18,7 +46,20 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    
 }
+.card:hover:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    max-width: 220px;
+    background: rgba(36, 36, 36, 0.7);
+    z-index: 0;
+}
+
 .card-content {
     height: 100%;
     color: white;
@@ -28,7 +69,77 @@
     align-items: center;
     width: 100%;
     border-radius: 3px;
-    background: linear-gradient(180deg,transparent 22.78%,#000 122.69%);
+    background: linear-gradient(180deg, transparent 22.78%, #000 122.69%);
     justify-content: flex-end;
     vertical-align: baseline;
+    z-index: 10;
+}
+
+#hide {
+    display: none;
+}
+
+#show {
+    display: flex;
+}
+
+.card-content.hover {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 30px;
+    animation: fadeAnimation .6s ease-in;
+}
+
+.card-content.hover .top {
+    display: inline-flex;
+    margin-top: 15px;
+    align-self: flex-start;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+}
+.card-content.hover .bottom {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    vertical-align: middle;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.card-content.hover .bottom >span {
+    display: inline-flex;
+    align-self: flex-start;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+}
+.card-content.hover p{
+font-family: 'Bebas Neue';
+font-weight: 200;
+font-size: 16px;
+line-height: 16px;
+letter-spacing: 3px;
+
+}
+.card-content.hover .top p{
+    margin: 0 0 0 12px;
+}
+.card-content.hover .bottom p{
+    margin: 12px;
+}
+.play-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.rate .star{
+    width: 12px;
+    height: 12px;
+}
+.card-content.hover .bottom p{
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 200;
+font-size: 12px;
+line-height: 12px;
 }

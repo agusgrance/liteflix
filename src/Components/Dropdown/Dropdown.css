@@ -1,0 +1,37 @@
+.dropdown{
+position: absolute;
+width: 220px;
+padding: 0 20px;
+right: 12%;
+background: #242424;
+color: white;
+z-index: 100;
+animation: fadeAnimation .6s ease;
+}
+
+.dropdown:after{
+    content: "";
+    position: absolute;
+    top: -6px;
+    background: #242424;
+    right: 27px;
+    height: 12px;
+    width: 12px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.dropdown ul{
+    list-style: none;
+    padding: 0;
+}
+.dropdown ul li {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 12px;
+    height: 1em;
+}
+.dropdown ul li svg{
+    font-size: 21px;
+    font-weight: 800;
+}

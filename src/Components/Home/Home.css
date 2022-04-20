@@ -14,6 +14,7 @@ font-size: 20px;
 line-height: 20px;
 letter-spacing: 4px;
 color: white;
+animation: fadeInAnimation .5s ease-out 1.5s both;
 }
 
 .movie-banner h2{
@@ -26,12 +27,15 @@ letter-spacing: 16px;
 text-transform: uppercase;
 color: #64EEBC;
 margin: 0;
+animation: fadeInAnimation .7s ease-out 1.5s both;
 }
-.Botones {
+.botones {
     display: flex;
 }
+
 .btn{
     font-family: 'Bebas Neue';
+    cursor: pointer;
     width: 250px;
     padding: 12px 0px;
     font-size: 18px;
@@ -42,11 +46,17 @@ margin: 0;
     border: none;
     letter-spacing: 4px;
     color: #fff;
-    background-color: #242424;
+    background-color: #242424;  
 }
 
 .movie-sidebar{
     width: 20%;
+}
+button.btn.play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleToLeft .5s cubic-bezier(.55,.055,.675,.19) .5s both;
 }
 button.btn.list {
     display: flex;
@@ -54,6 +64,65 @@ button.btn.list {
     align-items: center;
     justify-content: center;
     background: rgba(36, 36, 36, 0.5);
-border: 1px solid rgba(255, 255, 255, 0.5);
-box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    animation: scaleToLeft .5s cubic-bezier(.55,.055,.675,.19) .5s both;
+}
+.btn:hover{
+    opacity: 0.9!important;
+}
+.btn span{
+opacity:0;
+display: flex;
+vertical-align: middle;
+animation: fadeInLeftAnimation .5s 1.5s forwards;
+}
+@keyframes fadeAnimation {
+    0% {
+        opacity: 0;
+    
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+   
+     }
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+   
+     }
+}
+@keyframes fadeInLeftAnimation {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+        
+    
+    }
+    100% {
+        opacity: 1;
+        
+   
+     }
+}
+
+@keyframes scaleToLeft{
+    0% {
+        transform: scaleX(0);
+        transform-origin: 0 0;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 0 0;
+        opacity: 1;
+    }
 }
