@@ -12,6 +12,7 @@ function App() {
   const [list, setList] = useState(false);
   const [principal, setPrincipal] = useState(0);
   const [movieList, setMovieList] = useState([]);
+  const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
     fetchDestacado();
@@ -46,6 +47,8 @@ function App() {
     <div className="App" style={appStyle}>
       <MisPeliculasContext.Provider
         value={{
+          sidebar,
+          setSidebar,
           principal,
           movieList,
           list,

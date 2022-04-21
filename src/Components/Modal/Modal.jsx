@@ -24,14 +24,18 @@ function Modal() {
       setMovie(true);
       let obj = { titulo: pelicula, imagen: banner };
       localStorage.setItem("data", JSON.stringify(obj));
-      setPelicula("");
-      setBanner("");
+
       setMisPeliculas([...misPeliculas, obj]);
     }
   }
+  function handleFinish() {
+    setModal(false);
+    setPelicula("");
+    setBanner("");
+  }
   return (
     <div className="modal">
-      <div className="close" onClick={() => setModal(false)}>
+      <div className="close" onClick={() => handleFinish()}>
         <CloseIcon />
       </div>
       {!movie ? (
@@ -63,9 +67,9 @@ function Modal() {
             </div>
           </div>
           <h4>¡Felicitaciones!</h4>
-          <h5>Liteflix The Movie fue correctamente subida.</h5>
+          <h5>{pelicula} fue correctamente subida.</h5>
 
-          <button className="btn add" onClick={() => setModal(false)}>
+          <button className="btn add" onClick={() => handleFinish()}>
             ir a home
           </button>
         </div>

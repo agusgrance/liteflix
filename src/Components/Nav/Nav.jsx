@@ -7,9 +7,11 @@ import { ReactComponent as Perfil } from "../../Assets/Svg/Perfil.svg";
 import AddIcon from "@mui/icons-material/Add";
 import Modal from "../Modal/Modal";
 import { MisPeliculasContext } from "../../App";
+import Sidebar from "../Sidebar/Sidebar";
 
 function Nav() {
-  const { modal, setModal } = useContext(MisPeliculasContext);
+  const { modal, setModal, sidebar, setSidebar } =
+    useContext(MisPeliculasContext);
   return (
     <>
       <nav>
@@ -22,7 +24,7 @@ function Nav() {
           </a>
         </div>
         <div className="nav-right">
-          <div className="menu">
+          <div className="menu" onClick={() => setSidebar(true)}>
             <Menu />
           </div>
           <div className="menu">
@@ -34,6 +36,7 @@ function Nav() {
         </div>
       </nav>
       {modal && <Modal />}
+      {sidebar && <Sidebar />}
     </>
   );
 }

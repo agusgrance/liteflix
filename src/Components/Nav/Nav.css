@@ -33,5 +33,9 @@ nav a{
 }
 
 .nav-right> .menu{
+    cursor: pointer;
     padding-left: 40px;
+}
+.nav-right> .menu:hover{
+    opacity: 0.9;
 }
