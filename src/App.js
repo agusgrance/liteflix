@@ -13,24 +13,32 @@ function App() {
   const [principal, setPrincipal] = useState(0);
   const [movieList, setMovieList] = useState([]);
   const [sidebar, setSidebar] = useState(false);
-
+  const [isMobile, setIsMobile] = useState(false);
+  const apiKey = "6f26fd536dd6192ec8a57e94141f8b20";
   useEffect(() => {
+    window.addEventListener("resize", handleResize);
     fetchDestacado();
     fetchMovieList();
   }, []);
+
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
   async function fetchDestacado() {
-    //alimentarse de api
     const getDestacado = await fetch(
-      "https://api.themoviedb.org/3/tv/71446?api_key=6f26fd536dd6192ec8a57e94141f8b20&language=en-US"
+      `https://api.themoviedb.org/3/tv/71446?api_key=${apiKey}&language=en-US`
     );
     const destacadoToJson = await getDestacado.json();
     setPrincipal(destacadoToJson);
   }
-
   async function fetchMovieList() {
-    //alimentarse de api
     const getData = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd6192ec8a57e94141f8b20"
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
     );
     const dataToJson = await getData.json();
     setMovieList(dataToJson.results);
@@ -38,15 +46,25 @@ function App() {
 
   var appStyle = {
     background: `${
-      principal
-        ? `url(https://image.tmdb.org/t/p/original/${principal.backdrop_path}) center center / cover no-repeat`
-        : `white`
+      isMobile
+        ? "#242424"
+        : principal &&
+          `url(https://image.tmdb.org/t/p/original/${principal.backdrop_path}) center center / cover no-repeat`
+    }`,
+  };
+  var mobileStyle = {
+    background: `${
+      !principal
+        ? "none"
+        : isMobile &&
+          `url(https://image.tmdb.org/t/p/original/${principal.backdrop_path}) center center / cover no-repeat`
     }`,
   };
   return (
     <div className="App" style={appStyle}>
       <MisPeliculasContext.Provider
         value={{
+          isMobile,
           sidebar,
           setSidebar,
           principal,
@@ -69,7 +87,7 @@ function App() {
           <Nav />
         </header>
         <div className="container">
-          <Home />
+          <Home mobile={mobileStyle} />
         </div>
       </MisPeliculasContext.Provider>
     </div>

@@ -6,7 +6,7 @@ import "./Upload.css";
 import { MisPeliculasContext } from "../../App";
 
 function Upload() {
-  const { banner, setBanner } = useContext(MisPeliculasContext);
+  const { banner, setBanner, isMobile } = useContext(MisPeliculasContext);
   const [files, setFiles] = useState([]);
   const [load, setLoad] = useState(false);
   const [porcent, setPorcent] = useState(0);
@@ -81,7 +81,9 @@ function Upload() {
           <input {...getInputProps()} />
           <p>
             <AttachFileIcon className="drop-icon" />
-            Agregá un archivo o arrastralo y soltalo aquí
+            {!isMobile
+              ? "Agregá un archivo o arrastralo y soltalo aquí"
+              : "Agregá un archivo"}
           </p>
         </div>
       )}

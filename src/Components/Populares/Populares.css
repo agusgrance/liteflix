@@ -13,3 +13,11 @@ letter-spacing: 4px;
 .populares .title p a svg {
     transform: translateY(5px);
 } 
+
+@media (max-width: 720px) {
+    .card-animation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

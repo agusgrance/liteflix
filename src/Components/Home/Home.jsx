@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Populares from "../Populares/Populares";
 import "./Home.css";
 import AddIcon from "@mui/icons-material/Add";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import CheckIcon from "@mui/icons-material/Check";
-function Home() {
+import { MisPeliculasContext } from "../../App";
+function Home({ mobile }) {
+  const { isMobile } = useContext(MisPeliculasContext);
   const [select, setSelect] = useState(false);
   return (
     <>
-      <div className="movie-banner">
-        <h6 className="">
-          Original de <b> Liteflix </b>
-        </h6>
-        <h2 className="title">La Casa de Papel</h2>
+      <div className="movie-banner" style={mobile}>
+        <div className="movie-container">
+          <h6 className="banner-title">
+            Original de <b> Liteflix </b>
+          </h6>
+          <h2 className="title">La Casa de Papel</h2>
+        </div>
+
         <div className="botones">
           <button className="btn play">
             <span>
@@ -27,6 +32,7 @@ function Home() {
             </span>
           </button>
         </div>
+        {isMobile && <div className="fade-mobile"></div>}
       </div>
       <div className="movie-sidebar">
         <Populares />

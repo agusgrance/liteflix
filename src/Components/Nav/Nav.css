@@ -39,3 +39,11 @@ nav a{
 .nav-right> .menu:hover{
     opacity: 0.9;
 }
+
+@media (max-width: 720px) {
+    nav {
+        position: absolute;
+        width: 96vw;
+        max-width: none;
+    }
+}

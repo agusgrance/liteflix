@@ -91,6 +91,19 @@ text-align: center;
 letter-spacing: 4px;
 color: #FFFFFF;
 }
+
+@media (max-width: 720px) {
+  .modal {
+    left: 0;
+    top: 0;
+    width: 98%;
+    height: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+}
 @keyframes animateFromBottom {
   from {transform: translateY(600px); opacity: 0}
   to {transform: translateY(0); opacity: 1}

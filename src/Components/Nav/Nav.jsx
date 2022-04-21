@@ -10,31 +10,46 @@ import { MisPeliculasContext } from "../../App";
 import Sidebar from "../Sidebar/Sidebar";
 
 function Nav() {
-  const { modal, setModal, sidebar, setSidebar } =
+  const { modal, setModal, sidebar, setSidebar, isMobile } =
     useContext(MisPeliculasContext);
   return (
     <>
-      <nav>
-        <div className="nav-left">
-          <div className="logo">
-            <img src={Liteflix} />
+      {!isMobile ? (
+        <nav>
+          <div className="nav-left">
+            <div className="logo">
+              <img src={Liteflix} />
+            </div>
+            <a onClick={() => setModal(true)}>
+              <AddIcon /> Agregar Pelicula
+            </a>
           </div>
-          <a onClick={() => setModal(true)}>
-            <AddIcon /> Agregar Pelicula
-          </a>
-        </div>
-        <div className="nav-right">
+          <div className="nav-right">
+            <div className="menu" onClick={() => setSidebar(true)}>
+              <Menu />
+            </div>
+            <div className="menu">
+              <Notification />
+            </div>
+            <div className="menu">
+              <Perfil />
+            </div>
+          </div>
+        </nav>
+      ) : (
+        <nav>
           <div className="menu" onClick={() => setSidebar(true)}>
             <Menu />
           </div>
-          <div className="menu">
-            <Notification />
+          <div className="logo">
+            <img src={Liteflix} />
           </div>
-          <div className="menu">
+          <div className="perfil">
             <Perfil />
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
+
       {modal && <Modal />}
       {sidebar && <Sidebar />}
     </>

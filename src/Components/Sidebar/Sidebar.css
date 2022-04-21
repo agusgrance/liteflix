@@ -62,7 +62,13 @@ ul.menu-items {
 .menu-items li svg {
     padding-right: 7px;
 }
-
+@media (max-width: 720px) {
+    .sidebar {
+        position: fixed;
+        display: flex;
+        width: 100%;
+    }
+}
 @keyframes slidein {
     from {transform: translatex(700px);}
   to {transform: translatex(0);}
