@@ -6,7 +6,7 @@ import "./Upload.css";
 import { MisPeliculasContext } from "../../App";
 
 function Upload() {
-  const { banner, setBanner, isMobile } = useContext(MisPeliculasContext);
+  const { setBanner, isMobile } = useContext(MisPeliculasContext);
   const [files, setFiles] = useState([]);
   const [load, setLoad] = useState(false);
   const [porcent, setPorcent] = useState(0);
@@ -35,15 +35,6 @@ function Upload() {
   );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
-  const images = files.map(
-    (file) => file.path
-    // <div key={file.name}>
-    //   <div>
-    //     <img src={file.preview} style={{ width: "200px" }} alt="preview" />
-    //   </div>
-    // </div>
-  );
 
   return (
     <div className="upload">
