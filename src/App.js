@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Components/Home/Home";
+import { getMovies } from "./Api/api";
 export const MisPeliculasContext = createContext();
 function App() {
   const [misPeliculas, setMisPeliculas] = useState([]);
@@ -14,11 +15,14 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [sidebar, setSidebar] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const apiKey = "6f26fd536dd6192ec8a57e94141f8b20";
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    fetchDestacado();
-    fetchMovieList();
+
+    getMovies().then((e) => {
+      setPrincipal(e.destacado);
+      setMovieList(e.movie.results);
+    });
   }, []);
 
   const handleResize = () => {
@@ -28,21 +32,6 @@ function App() {
       setIsMobile(false);
     }
   };
-
-  async function fetchDestacado() {
-    const getDestacado = await fetch(
-      `https://api.themoviedb.org/3/tv/71446?api_key=${apiKey}&language=en-US`
-    );
-    const destacadoToJson = await getDestacado.json();
-    setPrincipal(destacadoToJson);
-  }
-  async function fetchMovieList() {
-    const getData = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
-    );
-    const dataToJson = await getData.json();
-    setMovieList(dataToJson.results);
-  }
 
   var appStyle = {
     background: `${
