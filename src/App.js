@@ -1,21 +1,13 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Components/Home/Home";
+import liteflixContext from "./Context/LiteflixContext";
 import { getMovies } from "./Api/api";
-export const MisPeliculasContext = createContext();
-function App() {
-  const [misPeliculas, setMisPeliculas] = useState([]);
-  const [modal, setModal] = useState(false);
-  const [banner, setBanner] = useState("");
-  const [pelicula, setPelicula] = useState();
-  const [popular, setPopular] = useState(true);
-  const [list, setList] = useState(false);
-  const [principal, setPrincipal] = useState(0);
-  const [movieList, setMovieList] = useState([]);
-  const [sidebar, setSidebar] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
+function App() {
+  const { setPrincipal, setMovieList, setIsMobile, principal, isMobile } =
+    useContext(liteflixContext);
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
@@ -51,34 +43,12 @@ function App() {
   };
   return (
     <div className="App" style={appStyle}>
-      <MisPeliculasContext.Provider
-        value={{
-          isMobile,
-          sidebar,
-          setSidebar,
-          principal,
-          movieList,
-          list,
-          setList,
-          popular,
-          setPopular,
-          pelicula,
-          setPelicula,
-          misPeliculas,
-          setMisPeliculas,
-          modal,
-          setModal,
-          banner,
-          setBanner,
-        }}
-      >
-        <header>
-          <Nav />
-        </header>
-        <div className="container">
-          <Home mobile={mobileStyle} />
-        </div>
-      </MisPeliculasContext.Provider>
+      <header>
+        <Nav />
+      </header>
+      <div className="container">
+        <Home mobile={mobileStyle} />
+      </div>
     </div>
   );
 }

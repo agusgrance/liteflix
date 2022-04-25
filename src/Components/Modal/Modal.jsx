@@ -2,7 +2,8 @@ import React, { useState, useContext } from "react";
 import Upload from "./Upload";
 import "./Modal.css";
 import CloseIcon from "@mui/icons-material/Close";
-import { MisPeliculasContext } from "../../App";
+import liteflixContext from "../../Context/LiteflixContext";
+
 import Liteflix from "../../Assets/Img/LITEFLIX.png";
 function Modal() {
   const [movie, setMovie] = useState(false);
@@ -15,7 +16,7 @@ function Modal() {
     banner,
     misPeliculas,
     setBanner,
-  } = useContext(MisPeliculasContext);
+  } = useContext(liteflixContext);
   const handleChage = (e) => {
     setPelicula(e.target.value);
   };

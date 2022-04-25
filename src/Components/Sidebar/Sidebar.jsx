@@ -4,9 +4,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { ReactComponent as Notification } from "../../Assets/Svg/Notification.svg";
 import { ReactComponent as Perfil } from "../../Assets/Svg/Perfil.svg";
 import CloseIcon from "@mui/icons-material/Close";
-import { MisPeliculasContext } from "../../App";
+
+import liteflixContext from "../../Context/LiteflixContext";
 function Sidebar() {
-  const { setSidebar, setModal } = useContext(MisPeliculasContext);
+  const { setSidebar, setModal } = useContext(liteflixContext);
   return (
     <div className="sidebar">
       <div className="sidebar-container">

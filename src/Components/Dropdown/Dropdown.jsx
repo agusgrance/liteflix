@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "./Dropdown.css";
 import CheckIcon from "@mui/icons-material/Check";
-import { MisPeliculasContext } from "../../App";
+import liteflixContext from "../../Context/LiteflixContext";
 function Dropdown() {
-  const { popular, setPopular } = useContext(MisPeliculasContext);
+  const { popular, setPopular } = useContext(liteflixContext);
   return (
     <div className="dropdown">
       <ul>

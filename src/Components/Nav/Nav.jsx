@@ -6,12 +6,13 @@ import { ReactComponent as Notification } from "../../Assets/Svg/Notification.sv
 import { ReactComponent as Perfil } from "../../Assets/Svg/Perfil.svg";
 import AddIcon from "@mui/icons-material/Add";
 import Modal from "../Modal/Modal";
-import { MisPeliculasContext } from "../../App";
+
+import liteflixContext from "../../Context/LiteflixContext";
 import Sidebar from "../Sidebar/Sidebar";
 
 function Nav() {
   const { modal, setModal, sidebar, setSidebar, isMobile } =
-    useContext(MisPeliculasContext);
+    useContext(liteflixContext);
   return (
     <>
       {!isMobile ? (

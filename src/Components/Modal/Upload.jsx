@@ -3,10 +3,10 @@ import { useDropzone } from "react-dropzone";
 import LinearProgress from "@mui/material/LinearProgress";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import "./Upload.css";
-import { MisPeliculasContext } from "../../App";
+import liteflixContext from "../../Context/LiteflixContext";
 
 function Upload() {
-  const { setBanner, isMobile } = useContext(MisPeliculasContext);
+  const { setBanner, isMobile } = useContext(liteflixContext);
   const [files, setFiles] = useState([]);
   const [load, setLoad] = useState(false);
   const [porcent, setPorcent] = useState(0);
