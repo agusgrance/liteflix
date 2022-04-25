@@ -4,9 +4,10 @@ import "./Home.css";
 import AddIcon from "@mui/icons-material/Add";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import CheckIcon from "@mui/icons-material/Check";
-import { MisPeliculasContext } from "../../App";
+import liteflixContext from "../../Context/LiteflixContext";
+
 function Home({ mobile }) {
-  const { isMobile } = useContext(MisPeliculasContext);
+  const { isMobile } = useContext(liteflixContext);
   const [select, setSelect] = useState(false);
   return (
     <>

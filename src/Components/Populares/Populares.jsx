@@ -3,10 +3,11 @@ import "./Populares.css";
 import Card from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { MisPeliculasContext } from "../../App";
+
+import liteflixContext from "../../Context/LiteflixContext";
 function Populares() {
   const { list, setList, popular, misPeliculas, movieList } =
-    useContext(MisPeliculasContext);
+    useContext(liteflixContext);
   function showList() {
     setList(!list);
   }
